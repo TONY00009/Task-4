@@ -1,0 +1,140 @@
+#TASK-4
+
+import cv2
+import numpy
+
+#TASK-4.1
+#CREATING YOUR OWN IMAGE-->
+
+
+img = numpy.zeros((500,700,4),numpy.uint8)
+cv2.imshow("pic" , img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic4 = cv2.circle(img, (372,200), 200, [255,255,255], 3)
+cv2.imshow("pic",pic4)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic1 = cv2.circle(img, (275,100), 25, [255,255,255], 3)
+cv2.imshow("pic",pic1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic2 = cv2.circle(img, (480,100), 25, [255,255,255], 3)
+cv2.imshow("pic",pic2)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic3= cv2.rectangle(img , (430,300) ,(300 , 300), [255,255,255] , 3)
+cv2.imshow("pic" , pic3)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+img3 = numpy.zeros((500,700,4),numpy.uint8)
+cv2.imshow("pic" , img3)
+
+
+pic11 = cv2.circle(img, (372,200), 200, [0,0,255], 3)
+cv2.imshow("pic",pic11)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic8 = cv2.circle(img, (275,100), 25, [0,255,0], 3)
+cv2.imshow("pic",pic8)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic9 = cv2.circle(img, (480,100), 25, [0,255,0], 3)
+cv2.imshow("pic",pic9)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+pic10=cv2.ellipse(img,(375,250),(100,100),0,0,180,[0,255,255] , -1)
+cv2.imshow("pic" , pic10)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+#TASK-4.2
+#Take 2 image crop some part of both image and swap it.
+
+img1=cv2.imread("a.jpg")
+cv2.imshow("picture",img1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+img1=cv2.resize(img1,(550,550))
+crop9 =img1[115:450 , 120:450]
+cv2.imshow("PIC1",crop9)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+img2=cv2.imread("b.jpg")
+cv2.imshow("PIC2",img2)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+img2=cv2.resize(img2, (480,480))
+crop5=img2[115:450 , 120:450]
+cv2.imshow("PIC2",crop5)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+crop9 = numpy.copy(crop9)
+crop5 = numpy.copy(crop5)
+img1[115:450,120:450]=crop5
+img2[115:450 , 120:450]=crop9
+
+cv2.imshow("PIC1", img1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+cv2.imshow("PIC1", img2)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+
+
+
+
+
+# TASK-4.3
+#Take 2 image and combine it to form single image. For example collage
+
+picture1 = cv2.imread("y.jpg")
+picture2 = cv2.imread("1.jpg")
+
+cv2.imshow("f1" , picture1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+
+cv2.imshow("f1" , cropf2)
+cv2.waitKey()
+cv2.destroyAllWindows()
+collage = numpy.hstack((picture1 , picture2))
+cv2.imshow("f1" , collage)
+cv2.waitKey()
+cv2.destroyAllWindows()
